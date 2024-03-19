@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "e1fc89fd"
+  },
+  "about.qmd": {
+    "about.html": "57b5cd11"
+  },
+  "paper-review.qmd": {
+    "paper-review.html": "28d42aa9"
+  },
+  "key-concepts.qmd": {
+    "key-concepts.html": "da49ff3b"
+  },
+  "area1.qmd": {
+    "area1.html": "165ace1d"
+  },
+  "diabetic-retinopathy.qmd": {
+    "diabetic-retinopathy.html": "0022d783"
+  },
+  "contact.qmd": {
+    "contact.html": "e32fe50d"
+  }
+}

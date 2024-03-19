@@ -1,0 +1,8 @@
+---
+title: "Practical Deep Learning for MDs"
+---
+What is the point of this? 
+
+In medicine, we collect data from patients (Hx, Ex, Ix) to make meaningful conclusions (Dx, Mx). Data analysis tools like Deep Learning have shown success (CXR, sepsis ICU?) and failure (EPIC & sepsis) in helping us derive meaningful conclusions better. 
+
+It's my belief that clinicians should be equipped with the basic knowledge of how it works, its benefits and limitations, so we can safely and confidently use it in our clinical practice. This website is a resource to do just that - to bridge clinical practice and emerging diagnostic tools.

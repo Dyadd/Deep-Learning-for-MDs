@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Deep Learning for MDs"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Paper Review"
+        file: paper-review.qmd
+      - text: "Key Concepts"
+        file: key-concepts.qmd
+    right:
+      - contact.qmd
+  sidebar: 
+      style: "docked"
+      background: light
+      contents:
+        - section: "Ophthalmology"
+          contents:
+            - diabetic-retinopathy.qmd
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

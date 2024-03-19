@@ -1,0 +1,28 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Deep Learning for MDs",
+    "section": "",
+    "text": "What is the point of this?\nIn medicine, we collect data from patients (Hx, Ex, Ix) to make meaningful conclusions (Dx, Mx). Data analysis tools like Deep Learning have shown success (CXR, sepsis ICU?) and failure (EPIC & sepsis) in helping us derive meaningful conclusions better.\nIt’s my belief that clinicians should be equipped with the basic knowledge of how it works, its benefits and limitations, so we can safely and confidently use it in our clinical practice. This website is a resource to do just that - to bridge clinical practice and emerging diagnostic tools."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "insert contact details"
+  },
+  {
+    "objectID": "diabetic-retinopathy.html",
+    "href": "diabetic-retinopathy.html",
+    "title": "Diabetic Retinopathy Detection",
+    "section": "",
+    "text": "this is the influential paper that put DL on the landscape, being a highly sensitive (94%) and specific (98%) tool to detect diabetic retinopathy (main pdf)\nas data analysis techniques improve clinical diagnostics, it’s my belief that clinicians should be equipped with the basic knowledge of how it works, its benefits and limitations so we can confidently use it in our clinical practice.",
+    "crumbs": [
+      "Home",
+      "Ophthalmology",
+      "Diabetic Retinopathy Detection"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+---
+title: "Diabetic Retinopathy Detection"
+author: "Deepak Jeyarajan"
+format:
+    html:
+        toc: true
+        html-math-method: katex
+        css: styles.css
+---
+
+#
+
+- this is the influential paper that put DL on the landscape, being a highly sensitive (94%) and specific (98%) tool to detect diabetic retinopathy (main pdf)
+- as data analysis techniques improve clinical diagnostics, it's my belief that clinicians should be equipped with the basic knowledge of how it works, its benefits and limitations so we can confidently use it in our clinical practice. 
