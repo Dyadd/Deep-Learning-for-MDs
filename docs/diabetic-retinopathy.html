@@ -157,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   </ul>
 </nav>
     </div>
@@ -189,11 +190,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="section" class="level1">
-<h1></h1>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this review, we break down the exact model that Gargeya &amp; Leng use in their paper “Automated Identification of Diabetic Retinopathy Using Deep Learning”. We explore a broad overview of what is happening here and then go into detail for a deeper insight. As always, it is not expected for you to know anything about Deep Learning and jargon is avoided/explained where appropriate.</p>
+</section>
+<section id="overview" class="level1">
+<h1>Overview</h1>
 <ul>
-<li>this is the influential paper that put DL on the landscape, being a highly sensitive (94%) and specific (98%) tool to detect diabetic retinopathy (main pdf)</li>
-<li>as data analysis techniques improve clinical diagnostics, it’s my belief that clinicians should be equipped with the basic knowledge of how it works, its benefits and limitations so we can confidently use it in our clinical practice.</li>
+<li>turning our data into numbers (pixels to numbers), let’s keep in mind our end product: it is a probability of our fundus having DR or not - it is a number</li>
+<li>essentially we use basic math like addition and multiplication to turn all these numbers into a final number, which is our probability.</li>
+<li>multiplying and adding up our data by random numbers (x) ⇒ called a convolution
+<ul>
+<li>gif of convolutions shrinking data</li>
+<li>do you see how now our matrix shrinks all the way down to 1 number</li>
+</ul></li>
+<li>now we have our data, our convolutions and one number at the end
+<ul>
+<li>now we know what answer we want, now we can change our random kernel numbers to what will get us our answer!</li>
+<li>it’s sorta like looking at the answer sheet and changing our working out to get to the final answer</li>
+<li>using basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer
+<ul>
+<li>the metric we call that we optimise for is the ‘loss function’ # - Fixing our Data # Transforming our Data # Ending with Probabilities # Getting the Answer</li>
+</ul></li>
+</ul></li>
 </ul>
 
 
