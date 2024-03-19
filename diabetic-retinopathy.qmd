@@ -22,7 +22,11 @@ In this review, we break down the exact model that Gargeya & Leng use in their p
     - it's sorta like looking at the answer sheet and changing our working out to get to the final answer
     - using basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer
         - the metric we call that we optimise for is the 'loss function'
-# - Fixing our Data
+
+# Fixing our Data
+
 # Transforming our Data
+
 # Ending with Probabilities
+
 # Getting the Answer
