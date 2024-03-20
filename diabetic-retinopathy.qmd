@@ -9,9 +9,18 @@ format:
 ---
 
 # Introduction
-In this review, we break down the exact model that Gargeya & Leng use in their paper "Automated Identification of Diabetic Retinopathy Using Deep Learning". We explore a broad overview of what is happening here and then go into detail for a deeper insight. As always, it is not expected for you to know anything about Deep Learning and jargon is avoided/explained where appropriate. 
+- In this review, we break down the exact model that Gargeya & Leng use in their paper "Automated Identification of Diabetic Retinopathy Using Deep Learning". 
+- The Overview and Key Takeaways sections are written for clinicians, the Technical Overview section is written for clinicians who want more detail on the nitty gritty (and we show you how easy it is to train a model yourself!).  
+- As always, it is not expected for you to know anything about Deep Learning and jargon is explained where appropriate. 
 
 # Overview
+In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates [@eyewiki] (eyewiki.aao.org/Diabetic Retinopathy). 
+
+Broadly speaking, we're turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. There are 3 'channels' of Red, Blue and Green that compose a colour image. Here's what a fundus looks like: 
+
+
+For simplicity's sake, let's assume there is just 1 channel. 
+
 - turning our data into numbers (pixels to numbers), let's keep in mind our end product: it is a probability of our fundus having DR or not - it is a number
 - essentially we use basic math like addition and multiplication to turn all these numbers into a final number, which is our probability.
 - multiplying and adding up our data by random numbers (x) ⇒ called a convolution 
@@ -23,10 +32,10 @@ In this review, we break down the exact model that Gargeya & Leng use in their p
     - using basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer
         - the metric we call that we optimise for is the 'loss function'
 
-# Fixing our Data
+# Key Takeaways
 
-# Transforming our Data
-
-# Ending with Probabilities
-
-# Getting the Answer
+# Technical Overview
+    # Fixing our Data
+    # Transforming our Data
+    # Ending with Probabilities
+    # Getting the Answer
