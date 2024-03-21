@@ -203,8 +203,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates <span class="citation" data-cites="eyewiki">[@eyewiki]</span></p>
-<p>(eyewiki.aao.org/Diabetic Retinopathy).</p>
+<p>In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates <span class="citation" data-cites="eyewiki">[@eyewiki]</span> (eyewiki.aao.org/Diabetic Retinopathy).</p>
+<p>Broadly speaking, we’re turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. There are 3 ‘channels’ of Red, Blue and Green that compose a colour image. Here’s what a fundus looks like: <img src="assets/rbg-channels.png" title="Red, Green &amp; Blue channels" class="img-fluid" alt="alt text"> <i>Note how the Red channel is brighter. This means it scores a higher value - it is more red than it is green or blue which is to be expected!</i></p>
+<p>For simplicity’s sake, let’s assume there is just 1 channel.</p>
 <ul>
 <li>turning our data into numbers (pixels to numbers), let’s keep in mind our end product: it is a probability of our fundus having DR or not - it is a number</li>
 <li>essentially we use basic math like addition and multiplication to turn all these numbers into a final number, which is our probability.</li>

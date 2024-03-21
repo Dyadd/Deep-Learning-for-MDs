@@ -16,10 +16,21 @@ format:
 # Overview
 In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates [@eyewiki] (eyewiki.aao.org/Diabetic Retinopathy). 
 
-Broadly speaking, we're turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. There are 3 'channels' of Red, Blue and Green that compose a colour image. Here's what a fundus looks like: 
+Broadly speaking, we're turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. 
+
+Here is information about 1 pixel in a zoomed in fundal picture. 
+![alt text](assets/rbg-channels2.png "Coordinates and RBG values)"
+The values on the left (777 and 424) refer to the coordinates of the pixel. The values on the right refer to its "Red, Blue, Green" (RGB) values - how red, blue and green the pixel is out of a maximum of 255. Understandably, the fundus is more red than blue or green (181,95,48).
+
+This is what it would look like if we split up the 3 colour channels. 
+![alt text](assets/rbg-channels.png "Red, Green & Blue Channels")
 
 
+But the main point is that an image is simply numbers!
 For simplicity's sake, let's assume there is just 1 channel. 
+
+So how do we go from this table (we will call this a matrix) into 1 number? We use basic math like addition and multiplication, shrinking our image down but keeping the important information we want.
+# need to add gradient boosting to this paper review
 
 - turning our data into numbers (pixels to numbers), let's keep in mind our end product: it is a probability of our fundus having DR or not - it is a number
 - essentially we use basic math like addition and multiplication to turn all these numbers into a final number, which is our probability.
