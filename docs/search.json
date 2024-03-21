@@ -18,7 +18,31 @@
     "href": "diabetic-retinopathy.html",
     "title": "Diabetic Retinopathy Detection",
     "section": "",
-    "text": "Introduction\n\nIn this review, we break down the exact model that Gargeya & Leng use in their paper “Automated Identification of Diabetic Retinopathy Using Deep Learning”.\nThe Overview and Key Takeaways sections are written for clinicians, the Technical Overview section is written for clinicians who want more detail on the nitty gritty (and we show you how easy it is to train a model yourself!).\n\nAs always, it is not expected for you to know anything about Deep Learning and jargon is explained where appropriate.\n\n\n\nOverview\nIn identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates [@eyewiki] (eyewiki.aao.org/Diabetic Retinopathy).\nBroadly speaking, we’re turning data (the fundal image) into data (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. There are 3 ‘channels’ of Red, Blue and Green that compose a colour image. Here’s what a fundus looks like:  Note how the Red channel is brighter. This means it scores a higher value - it is more red than it is green or blue which is to be expected!\nFor simplicity’s sake, let’s assume there is just 1 channel.\n\nturning our data into numbers (pixels to numbers), let’s keep in mind our end product: it is a probability of our fundus having DR or not - it is a number\nessentially we use basic math like addition and multiplication to turn all these numbers into a final number, which is our probability.\nmultiplying and adding up our data by random numbers (x) ⇒ called a convolution\n\ngif of convolutions shrinking data\ndo you see how now our matrix shrinks all the way down to 1 number\n\nnow we have our data, our convolutions and one number at the end\n\nnow we know what answer we want, now we can change our random kernel numbers to what will get us our answer!\nit’s sorta like looking at the answer sheet and changing our working out to get to the final answer\nusing basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer\n\nthe metric we call that we optimise for is the ‘loss function’\n\n\n\n\n\nKey Takeaways\n\n\nTechnical Overview\n# Fixing our Data\n# Transforming our Data\n# Ending with Probabilities\n# Getting the Answer",
+    "text": "In this review, we break down the exact model that Gargeya & Leng use in their paper “Automated Identification of Diabetic Retinopathy Using Deep Learning”.\nThe Overview and Key Takeaways sections are written for clinicians, the Technical Overview section is written for clinicians who want more detail on the nitty gritty (and we show you how easy it is to train a model yourself!).\n\nAs always, it is not expected for you to know anything about Deep Learning and jargon is explained where appropriate.",
+    "crumbs": [
+      "Home",
+      "Ophthalmology",
+      "Diabetic Retinopathy Detection"
+    ]
+  },
+  {
+    "objectID": "diabetic-retinopathy.html#the-basic-concept",
+    "href": "diabetic-retinopathy.html#the-basic-concept",
+    "title": "Diabetic Retinopathy Detection",
+    "section": "The Basic Concept",
+    "text": "The Basic Concept\nBroadly speaking, we’re turning data (the fundal image) into data (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers.\nHere is information about 1 pixel in a zoomed in fundal picture. \nThe values on the left (777 and 424) refer to the coordinates of the pixel. The values on the right refer to its “Red, Blue, Green” (RGB) values - how red, blue and green the pixel is out of a maximum of 255. Understandably, the fundus is more red than blue or green (181,95,48).\nThis is what it would look like if we split up the 3 colour channels. \nBut the main point is that an image is simply numbers! For simplicity’s sake, let’s assume there is just 1 channel.\nThis is the essence of the whole model.",
+    "crumbs": [
+      "Home",
+      "Ophthalmology",
+      "Diabetic Retinopathy Detection"
+    ]
+  },
+  {
+    "objectID": "diabetic-retinopathy.html#the-basic-math",
+    "href": "diabetic-retinopathy.html#the-basic-math",
+    "title": "Diabetic Retinopathy Detection",
+    "section": "The Basic Math",
+    "text": "The Basic Math\nWe’re going to use basic addition and multiplication to turn all these pixel numbers into a final number.\nThe first transformation we do is called a convolution (hence these models are called convolutional neural networks).\nYou start off with a the image matrix and a kernal (a matrix of numbers) \nWe move a kernal along the image, multiplying each kernal’s value by the pixel value and adding all of them up. This gives us a matrix of our processed data. \n\nmultiplying and adding up our data by random numbers (x) ⇒ called a convolution\n\ngif of convolutions shrinking data\ndo you see how now our matrix shrinks all the way down to 1 number\n\nnow we have our data, our convolutions and one number at the end\n\nnow we know what answer we want, now we can change our random kernel numbers to what will get us our answer!\nit’s sorta like looking at the answer sheet and changing our working out to get to the final answer\nusing basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer\n\nthe metric we call that we optimise for is the ‘loss function’",
     "crumbs": [
       "Home",
       "Ophthalmology",

@@ -16,10 +16,12 @@ format:
 # Overview
 In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates [@eyewiki] (eyewiki.aao.org/Diabetic Retinopathy). 
 
+## The Basic Concept
 Broadly speaking, we're turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. 
 
 Here is information about 1 pixel in a zoomed in fundal picture. 
-![alt text](assets/rbg-channels2.png "Coordinates and RBG values)"
+![Coordinates and RBG values](assets/rbg-channels2.png){.lightbox}
+
 The values on the left (777 and 424) refer to the coordinates of the pixel. The values on the right refer to its "Red, Blue, Green" (RGB) values - how red, blue and green the pixel is out of a maximum of 255. Understandably, the fundus is more red than blue or green (181,95,48).
 
 This is what it would look like if we split up the 3 colour channels. 
@@ -29,11 +31,23 @@ This is what it would look like if we split up the 3 colour channels.
 But the main point is that an image is simply numbers!
 For simplicity's sake, let's assume there is just 1 channel. 
 
-So how do we go from this table (we will call this a matrix) into 1 number? We use basic math like addition and multiplication, shrinking our image down but keeping the important information we want.
-# need to add gradient boosting to this paper review
+This is the essence of the whole model.
+![Our Goal Grossly Simplified](assets/DRorNot.png)
 
-- turning our data into numbers (pixels to numbers), let's keep in mind our end product: it is a probability of our fundus having DR or not - it is a number
-- essentially we use basic math like addition and multiplication to turn all these numbers into a final number, which is our probability.
+
+## The Basic Math
+We're going to use basic addition and multiplication to turn all these pixel numbers into a final number.
+
+The first transformation we do is called a convolution (hence these models are called convolutional neural networks).
+
+You start off with a the image matrix and a kernal (a matrix of numbers)
+![Matrix & Kernal](assets/matrix%20%26%20kernal.png)
+
+We move a kernal along the image, multiplying each kernal's value by the pixel value and adding all of them up. This gives us a matrix of our processed data.
+![Convolution](assets/convolutiongif.gif)
+After we apply the kernal through the image, it gives us a new matrix that we call a feature map. 
+
+
 - multiplying and adding up our data by random numbers (x) ⇒ called a convolution 
     - gif of convolutions shrinking data
     - do you see how now our matrix shrinks all the way down to 1 number
