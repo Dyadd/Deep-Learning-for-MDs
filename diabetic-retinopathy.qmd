@@ -6,15 +6,21 @@ format:
         toc: true
         html-math-method: katex
         css: styles.css
+date: "03/22/2024"
+#date-modified: ""
 ---
 
 # Introduction
-- In this review, we break down the exact model that Gargeya & Leng use in their paper "Automated Identification of Diabetic Retinopathy Using Deep Learning". 
-- The Overview and Key Takeaways sections are written for clinicians, the Technical Overview section is written for clinicians who want more detail on the nitty gritty (and we show you how easy it is to train a model yourself!).  
-- As always, it is not expected for you to know anything about Deep Learning and jargon is explained where appropriate. 
+::: {.callout-tip}
+## Beginner-Friendly
+No prior knowledge is required for this article!
+:::
+- In the Overview, we break down the basics of deep learning and image recognition. We'll talk about the core concept, the math involved and how a basic model is made. Specifically, we'll focus on the model that Gargeya & Leng use in their highly-cited paper "Automated Identification of Diabetic Retinopathy Using Deep Learning". 
+- The pertinent clinical takeaways are outlined in the Key Takeaways section.
+- In the Technical Overview, we dive under the hood to see how a basic model is trained with code! (coming soon).
 
 # Overview
-In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates [@eyewiki] (eyewiki.aao.org/Diabetic Retinopathy). 
+In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates. We'll explore how a model can accurately detect diabetic retinopathy without explicitly knowing that information.
 
 ## The Basic Concept
 Broadly speaking, we're turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers. 
@@ -40,17 +46,31 @@ We're going to use basic addition and multiplication to turn all these pixel num
 
 The first transformation we do is called a convolution (hence these models are called convolutional neural networks).
 
-You start off with a the image matrix and a kernal (a matrix of numbers)
-![Matrix & Kernal](assets/matrix%20%26%20kernal.png)
+You start off with the image matrix and a kernal (a matrix of numbers)
+![Matrix & Kernal](assets/matrix-kernal.png)
 
-We move a kernal along the image, multiplying each kernal's value by the pixel value and adding all of them up. This gives us a matrix of our processed data.
+We move a kernal along the image, multiplying each kernal's value by the pixel value and adding all of them up. 
 ![Convolution](assets/convolutiongif.gif)
-After we apply the kernal through the image, it gives us a new matrix that we call a feature map. 
+
+ After we apply the kernal through the image, it gives us a new matrix that we call a feature map.
+![Feature Map](assets/matrix-kernal-to-features.png)
+
+Now, why is it called a feature map? A feature map maps out key features the model uses for classification. Let's run the number 7 from the famous MNIST database through the kernal, a large database of handwritten digits.
+![Number 7 using the Same Kernal](assets/mnist-vertical-lines.png)
+
+As you can see, the our feature map has highlighted the vertical parts of the image. In a sense, the model has learned what vertical lines are! Let's use another kernal and see what happens.
+![Number 7 with a New Kernal](assets/mnist-horizontal-lines.png)
+
+::: {.callout-tip title="Tip"}
+Using the multiplication and addition steps we explained above, try to see why those two kernals generate their respective feature maps!
+:::
+
+## The Basic Model 
+In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The beauty of deep learning is that we don't have to set kernals for what features we think are important - the model does that by itself. Let's see how it does that. 
 
 
-- multiplying and adding up our data by random numbers (x) ⇒ called a convolution 
-    - gif of convolutions shrinking data
-    - do you see how now our matrix shrinks all the way down to 1 number
+
+
 - now we have our data, our convolutions and one number at the end
     - now we know what answer we want, now we can change our random kernel numbers to what will get us our answer!
     - it's sorta like looking at the answer sheet and changing our working out to get to the final answer

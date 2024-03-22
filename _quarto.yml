@@ -4,22 +4,24 @@ project:
 
 website:
   title: "Deep Learning for MDs"
-  navbar:
-    background: primary
-    search: true
-    left:
-      - text: "Home"
-        file: index.qmd
-      - text: "Paper Review"
-        file: paper-review.qmd
-      - text: "Key Concepts"
-        file: key-concepts.qmd
-    right:
-      - contact.qmd
+  #navbar:
+    #background: primary
+    #search: true
+    #left:
+    #  - text: "Home"
+    #    file: index.qmd
+    #  - text: "Paper Review"
+    #    file: paper-review.qmd
+    #  - text: "Key Concepts"
+    #    file: key-concepts.qmd
+    #right:
+    #  - contact.qmd
   sidebar: 
       style: "docked"
       background: light
       contents:
+        - text: "Home"
+          file: index.qmd
         - section: "Ophthalmology"
           contents:
             - diabetic-retinopathy.qmd

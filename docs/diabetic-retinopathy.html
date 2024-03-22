@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Deepak Jeyarajan">
+<meta name="dcterms.date" content="2024-03-22">
 
 <title>Deep Learning for MDs - Diabetic Retinopathy Detection</title>
 <style>
@@ -44,11 +45,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -75,47 +76,10 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Deep Learning for MDs</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./paper-review.html"> 
-<span class="menu-text">Paper Review</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./key-concepts.html"> 
-<span class="menu-text">Key Concepts</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -124,15 +88,34 @@ ul.task-list li input[type="checkbox"] {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./diabetic-retinopathy.html">Ophthalmology</a></li><li class="breadcrumb-item"><a href="./diabetic-retinopathy.html">Diabetic Retinopathy Detection</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Deep Learning for MDs</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -165,6 +148,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#the-basic-concept" id="toc-the-basic-concept" class="nav-link" data-scroll-target="#the-basic-concept">The Basic Concept</a></li>
   <li><a href="#the-basic-math" id="toc-the-basic-math" class="nav-link" data-scroll-target="#the-basic-math">The Basic Math</a></li>
+  <li><a href="#the-basic-model" id="toc-the-basic-model" class="nav-link" data-scroll-target="#the-basic-model">The Basic Model</a></li>
   </ul></li>
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   <li><a href="#technical-overview" id="toc-technical-overview" class="nav-link" data-scroll-target="#technical-overview">Technical Overview</a></li>
@@ -190,6 +174,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 22, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -201,16 +191,28 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beginner-Friendly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No prior knowledge is required for this article!</p>
+</div>
+</div>
 <ul>
-<li>In this review, we break down the exact model that Gargeya &amp; Leng use in their paper “Automated Identification of Diabetic Retinopathy Using Deep Learning”.</li>
-<li>The Overview and Key Takeaways sections are written for clinicians, the Technical Overview section is written for clinicians who want more detail on the nitty gritty (and we show you how easy it is to train a model yourself!).<br>
-</li>
-<li>As always, it is not expected for you to know anything about Deep Learning and jargon is explained where appropriate.</li>
+<li>In the Overview, we break down the basics of deep learning and image recognition. We’ll talk about the core concept, the math involved and how a basic model is made. Specifically, we’ll focus on the model that Gargeya &amp; Leng use in their highly-cited paper “Automated Identification of Diabetic Retinopathy Using Deep Learning”.</li>
+<li>The pertinent clinical takeaways are outlined in the Key Takeaways section.</li>
+<li>In the Technical Overview, we dive under the hood to see how a basic model is trained with code! (coming soon).</li>
 </ul>
 </section>
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates <span class="citation" data-cites="eyewiki">[@eyewiki]</span> (eyewiki.aao.org/Diabetic Retinopathy).</p>
+<p>In identifying diabetic retinopathy (DR), we traditionally interpret the retinal fundus, looking for characteristics like microaneurysms, neovascularisation and hard exudates. We’ll explore how a model can accurately detect diabetic retinopathy without explicitly knowing that information.</p>
 <section id="the-basic-concept" class="level2">
 <h2 class="anchored" data-anchor-id="the-basic-concept">The Basic Concept</h2>
 <p>Broadly speaking, we’re turning <b>data</b> (the fundal image) into <b>data</b> (a number saying if DR is present or not). The fundal image is itself made out of pixels, which are numbers.</p>
@@ -224,14 +226,29 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="the-basic-math">The Basic Math</h2>
 <p>We’re going to use basic addition and multiplication to turn all these pixel numbers into a final number.</p>
 <p>The first transformation we do is called a convolution (hence these models are called convolutional neural networks).</p>
-<p>You start off with a the image matrix and a kernal (a matrix of numbers) <img src="assets/matrix %26 kernal.png" class="img-fluid" alt="Matrix &amp; Kernal"></p>
-<p>We move a kernal along the image, multiplying each kernal’s value by the pixel value and adding all of them up. This gives us a matrix of our processed data. <img src="assets/cnnexplainer1.gif" class="img-fluid" alt="Convolution"></p>
+<p>You start off with the image matrix and a kernal (a matrix of numbers) <img src="assets/matrix-kernal.png" class="img-fluid" alt="Matrix &amp; Kernal"></p>
+<p>We move a kernal along the image, multiplying each kernal’s value by the pixel value and adding all of them up. <img src="assets/convolutiongif.gif" class="img-fluid" alt="Convolution"></p>
+<p>After we apply the kernal through the image, it gives us a new matrix that we call a feature map. <img src="assets/matrix-kernal-to-features.png" class="img-fluid" alt="Feature Map"></p>
+<p>Now, why is it called a feature map? A feature map maps out key features the model uses for classification. Let’s run the number 7 from the famous MNIST database through the kernal, a large database of handwritten digits. <img src="assets/mnist-vertical-lines.png" class="img-fluid" alt="Number 7 using the Same Kernal"></p>
+<p>As you can see, the our feature map has highlighted the vertical parts of the image. In a sense, the model has learned what vertical lines are! Let’s use another kernal and see what happens. <img src="assets/mnist-horizontal-lines.png" class="img-fluid" alt="Number 7 with a New Kernal"></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the multiplication and addition steps we explained above, try to see why those two kernals generate their respective feature maps!</p>
+</div>
+</div>
+</section>
+<section id="the-basic-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-basic-model">The Basic Model</h2>
+<p>In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The beauty of deep learning is that we don’t have to set kernals for what features we think are important - the model does that by itself. Let’s see how it does that.</p>
 <ul>
-<li>multiplying and adding up our data by random numbers (x) ⇒ called a convolution
-<ul>
-<li>gif of convolutions shrinking data</li>
-<li>do you see how now our matrix shrinks all the way down to 1 number</li>
-</ul></li>
 <li>now we have our data, our convolutions and one number at the end
 <ul>
 <li>now we know what answer we want, now we can change our random kernel numbers to what will get us our answer!</li>
@@ -646,7 +663,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
