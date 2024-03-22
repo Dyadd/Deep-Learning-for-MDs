@@ -66,7 +66,7 @@ Using the multiplication and addition steps we explained above, try to see why t
 :::
 
 ## The Basic Model 
-In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The beauty of deep learning is that we don't have to set kernals for what features we think are important - the model does that by itself. Let's see how it does that. 
+In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The feature maps themselves become the input to different kernals, forming new maps. This multi-layered (hence deep in 'deep learning') nature means complex combinations of features can be detected. The beauty of deep learning is that we don't have to set kernals for what features we think are important - the model does that by itself. Let's see how it does that. 
 
 ::: {.callout-note title="Jargon"}
 The secret behind machine learning (of which deep learning is a subset of) is "gradient descent." We'll describe its intuition here.

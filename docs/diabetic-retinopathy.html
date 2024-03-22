@@ -266,7 +266,8 @@ Jargon
 <p>We incrementally update the kernal values, recalculating the gradient at each step so we know which direction to move in. The rate at which we change the kernals is called the learning rate (more to come on this). <img src="assets/gradient-descent.png" class="img-fluid" alt="Gradient Descent"></p>
 <p>Voilà - we are now training our model! In essence, we give the model the lot of practice questions (the data) and the answer sheet (the data’s interpretation) and tell it to figure it out. This is both intelligent and not so intelligent. What if it sees a unique fundus that it has not been trained to see? Perhaps the innate features it has gathered is sufficient to remain accurate but perhaps it is not. Perhaps the dataset it is trained on is biased towards a particular demographic. Perhaps you work with a specific demographic of people and the original dataset it was trained on is too different.</p>
 <p>This means that the training data must be heretogenous so it can work for a wide range of real-life cases. This makes it important to be critical of the sensitivity/specificity described by papers showcasing the model. Depending on the dataset the model was tested on, it may not be applicable to your patient.</p>
-<p>You must be aware that the sensitivity/specificity described is based on a test dataset researchers have used (it varies from dataset to dataset) and ensure it is directly applicable to your patient. Here is a table from Gargeya &amp; Leng: <img src="assets/difference-in-sens-spec.png" class="img-fluid" alt="Difference in Sensitivity &amp; Specificity per Dataset">. The model still performs extremely well but there is variable performance across datasets and data types (‘mild vs severe’ DR).</p>
+<p>You must be aware that the sensitivity/specificity described is based on a test dataset researchers have used (it varies from dataset to dataset) and ensure it is directly applicable to your patient. Here is a table from Gargeya &amp; Leng: <img src="assets/difference-in-sens-spec.png" class="img-fluid" alt="Difference in Sensitivity &amp; Specificity per Dataset">.</p>
+<p>The model still performs extremely well but there is variable performance across datasets and data types (‘mild vs severe’ DR).</p>
 </section>
 </section>
 <section id="key-takeaways" class="level1">
@@ -707,7 +708,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
