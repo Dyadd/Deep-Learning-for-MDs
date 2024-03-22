@@ -248,28 +248,72 @@ Tip
 <section id="the-basic-model" class="level2">
 <h2 class="anchored" data-anchor-id="the-basic-model">The Basic Model</h2>
 <p>In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The beauty of deep learning is that we don’t have to set kernals for what features we think are important - the model does that by itself. Let’s see how it does that.</p>
-<ul>
-<li>now we have our data, our convolutions and one number at the end
-<ul>
-<li>now we know what answer we want, now we can change our random kernel numbers to what will get us our answer!</li>
-<li>it’s sorta like looking at the answer sheet and changing our working out to get to the final answer</li>
-<li>using basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer
-<ul>
-<li>the metric we call that we optimise for is the ‘loss function’</li>
-</ul></li>
-</ul></li>
-</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Jargon">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Jargon
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The secret behind machine learning (of which deep learning is a subset of) is “gradient descent.” We’ll describe its intuition here.</p>
+</div>
+</div>
+<p>Suppose I have a deep learning model that tells me if a number is 7 or not. One catch is that all of numbers in the kernals are randomised, meaning no meaningful features are being identified - our model doesn’t work. I draw the number 7 and test the model. It predicts 50-50 for if it is a 7 or not. But we know that the correct answer is 100-0 that it is a 7. Let’s say we want to improve our model so we randomly tweak the kernals. Now the model’s prediction is 60-40 in favour of 7. The model is improving!</p>
+<p>Simply put, I want to figure out what number the kernal needs to be for our model’s prediction to be the best. This is a calculus question. With basic calculus, you can derive the direction (increase or decrease) each kernal value needs to change to improve the prediction. Now, every time our model updates its kernal values, it is improving - it is learning!</p>
+<p>We incrementally update the kernal values, recalculating the gradient at each step so we know which direction to move in. The rate at which we change the kernals is called the learning rate (more to come on this). <img src="assets/gradient-descent.png" class="img-fluid" alt="Gradient Descent"></p>
+<p>Voilà - we are now training our model! In essence, we give the model the lot of practice questions (the data) and the answer sheet (the data’s interpretation) and tell it to figure it out. This is both intelligent and not so intelligent. What if it sees a unique fundus that it has not been trained to see? Perhaps the innate features it has gathered is sufficient to remain accurate but perhaps it is not. Perhaps the dataset it is trained on is biased towards a particular demographic. Perhaps you work with a specific demographic of people and the original dataset it was trained on is too different.</p>
+<p>This means that the training data must be heretogenous so it can work for a wide range of real-life cases. This makes it important to be critical of the sensitivity/specificity described by papers showcasing the model. Depending on the dataset the model was tested on, it may not be applicable to your patient.</p>
+<p>You must be aware that the sensitivity/specificity described is based on a test dataset researchers have used (it varies from dataset to dataset) and ensure it is directly applicable to your patient. Here is a table from Gargeya &amp; Leng: <img src="assets/difference-in-sens-spec.png" class="img-fluid" alt="Difference in Sensitivity &amp; Specificity per Dataset">. The model still performs extremely well but there is variable performance across datasets and data types (‘mild vs severe’ DR).</p>
 </section>
 </section>
 <section id="key-takeaways" class="level1">
 <h1>Key Takeaways</h1>
+<div class="callout callout-style-default callout-tip callout-titled" title="It is powerful">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+It is powerful
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Deep Learning offers an extremely robust way to solve/answer any question by learning complex features invisible to us. There is an enormous variety of problems that can be solved by it (eg. risk of mortality, likelihood of falls, automation of administrative tasks, etc.)</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Data heterogenicity is important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data heterogenicity is important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For reliable and accurate performance, your input data must be familiar to the data the model was trained on. Therefore, data heterogenicity is important for the model’s training. This also means you might need to interpret/fix your data to be in a way the model understands (eg. the fundal image needs to be taken with roughly the same way how the model is trained)</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Beware of overestimated sensitivity/specificities">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beware of overestimated sensitivity/specificities
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be aware of what datasets the model has been tested on - sufficient cross-validation is necessary to avoid bloated/overestimated specificity &amp; sensitivity values.</p>
+</div>
+</div>
 </section>
 <section id="technical-overview" class="level1">
 <h1>Technical Overview</h1>
-<pre><code># Fixing our Data
-# Transforming our Data
-# Ending with Probabilities
-# Getting the Answer</code></pre>
+<pre><code>coming soon!</code></pre>
 
 
 </section>
@@ -663,7 +707,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

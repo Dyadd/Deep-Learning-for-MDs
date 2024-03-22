@@ -68,19 +68,35 @@ Using the multiplication and addition steps we explained above, try to see why t
 ## The Basic Model 
 In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The beauty of deep learning is that we don't have to set kernals for what features we think are important - the model does that by itself. Let's see how it does that. 
 
+::: {.callout-note title="Jargon"}
+The secret behind machine learning (of which deep learning is a subset of) is "gradient descent." We'll describe its intuition here.
+:::
 
+Suppose I have a deep learning model that tells me if a number is 7 or not. One catch is that all of numbers in the kernals are randomised, meaning no meaningful features are being identified - our model doesn't work. I draw the number 7 and test the model. It predicts 50-50 for if it is a 7 or not. But we know that the correct answer is 100-0 that it is a 7. Let's say we want to improve our model so we randomly tweak the kernals. Now the model's prediction is 60-40 in favour of 7. The model is improving!  
 
+Simply put, I want to figure out what number the kernal needs to be for our model's prediction to be the best. This is a calculus question. With basic calculus, you can derive the direction (increase or decrease) each kernal value needs to change to improve the prediction. Now, every time our model updates its kernal values, it is improving - it is learning!
 
-- now we have our data, our convolutions and one number at the end
-    - now we know what answer we want, now we can change our random kernel numbers to what will get us our answer!
-    - it's sorta like looking at the answer sheet and changing our working out to get to the final answer
-    - using basic calculus, we can figure out if each random number in each kernel needs to increase or decrease to get closer to the actual answer
-        - the metric we call that we optimise for is the 'loss function'
+We incrementally update the kernal values, recalculating the gradient at each step so we know which direction to move in. The rate at which we change the kernals is called the learning rate (more to come on this).
+![Gradient Descent](assets/gradient-descent.png)
+
+Voilà - we are now training our model! In essence, we give the model the lot of practice questions (the data) and the answer sheet (the data's interpretation) and tell it to figure it out. This is both intelligent and not so intelligent. What if it sees a unique fundus that it has not been trained to see? Perhaps the innate features it has gathered is sufficient to remain accurate but perhaps it is not. Perhaps the dataset it is trained on is biased towards a particular demographic. Perhaps you work with a specific demographic of people and the original dataset it was trained on is too different.
+
+This means that the training data must be heretogenous so it can work for a wide range of real-life cases. This makes it important to be critical of the sensitivity/specificity described by papers showcasing the model. Depending on the dataset the model was tested on, it may not be applicable to your patient. 
+
+You must be aware that the sensitivity/specificity described is based on a test dataset researchers have used (it varies from dataset to dataset) and ensure it is directly applicable to your patient. Here is a table from Gargeya & Leng:
+![Difference in Sensitivity & Specificity per Dataset](assets/difference-in-sens-spec.png). 
+
+The model still performs extremely well but there is variable performance across datasets and data types ('mild vs severe' DR). 
 
 # Key Takeaways
-
+::: {.callout-tip title="It is powerful"}
+Deep Learning offers an extremely robust way to solve/answer any question by learning complex features invisible to us. There is an enormous variety of problems that can be solved by it (eg. risk of mortality, likelihood of falls, automation of administrative tasks, etc.)
+:::
+::: {.callout-warning title="Data heterogenicity is important"}
+For reliable and accurate performance, your input data must be familiar to the data the model was trained on. Therefore, data heterogenicity is important for the model's training. This also means you might need to interpret/fix your data to be in a way the model understands (eg. the fundal image needs to be taken with roughly the same way how the model is trained)
+:::
+::: {.callout-important title="Beware of overestimated sensitivity/specificities"}
+Be aware of what datasets the model has been tested on - sufficient cross-validation is necessary to avoid bloated/overestimated specificity & sensitivity values. 
+:::
 # Technical Overview
-    # Fixing our Data
-    # Transforming our Data
-    # Ending with Probabilities
-    # Getting the Answer
+    coming soon!
