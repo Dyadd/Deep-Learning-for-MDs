@@ -10,6 +10,11 @@ date: "03/22/2024"
 #date-modified: ""
 ---
 
+# To-Do:
+- add technical overview: quote text from Gargeya's study & recreate in code 
+- add references/citations
+- add estimated reading time, sharing functions
+
 # Introduction
 ::: {.callout-tip}
 ## Beginner-Friendly

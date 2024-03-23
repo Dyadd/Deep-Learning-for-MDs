@@ -143,7 +143,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link active" data-scroll-target="#to-do">To-Do:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#the-basic-concept" id="toc-the-basic-concept" class="nav-link" data-scroll-target="#the-basic-concept">The Basic Concept</a></li>
@@ -189,6 +190,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="to-do" class="level1">
+<h1>To-Do:</h1>
+<ul>
+<li>add technical overview: quote text from Gargeya’s study &amp; recreate in code</li>
+<li>add references/citations</li>
+<li>add estimated reading time, sharing functions</li>
+</ul>
+</section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -247,7 +256,7 @@ Tip
 </section>
 <section id="the-basic-model" class="level2">
 <h2 class="anchored" data-anchor-id="the-basic-model">The Basic Model</h2>
-<p>In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The beauty of deep learning is that we don’t have to set kernals for what features we think are important - the model does that by itself. Let’s see how it does that.</p>
+<p>In an actual model, the original image is transformed by numerous different kernals to form a variety of feature maps. The feature maps themselves become the input to different kernals, forming new maps. This multi-layered (hence deep in ‘deep learning’) nature means complex combinations of features can be detected. The beauty of deep learning is that we don’t have to set kernals for what features we think are important - the model does that by itself. Let’s see how it does that.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Jargon">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -708,7 +717,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
