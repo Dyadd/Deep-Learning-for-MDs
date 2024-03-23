@@ -105,3 +105,11 @@ Be aware of what datasets the model has been tested on - sufficient cross-valida
 :::
 # Technical Overview
     coming soon!
+    you can host models with huggingface - this one doesn't work (yet) but for example:
+    
+<iframe
+	src="https://dyadd-acrimaglaucoma2.hf.space"
+	frameborder="0"
+	width="850"
+	height="450"
+></iframe>
